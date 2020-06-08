@@ -10,13 +10,13 @@ const incrementBtnRef = document.querySelector(
 let counterValue = Number(valueRef.textContent);
 
 const decrement = event => {
-  decrementBtnRef.value = 1;
+  event.target.value = 1;
   counterValue -= Number(event.target.value);
   valueRef.textContent = counterValue;
 };
 
 const increment = event => {
-  incrementBtnRef.value = 1;
+  event.target.value = 1;
   counterValue += Number(event.target.value);
   valueRef.textContent = counterValue;
 };

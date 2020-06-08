@@ -7,6 +7,7 @@ const handleInputSymbol = event => {
     inputSymbols.classList.remove('invalid');
   } else {
     inputSymbols.classList.add('invalid');
+    inputSymbols.classList.remove('valid');
   }
 };
 
