@@ -13,12 +13,12 @@ const valueInput = event => {
   counterCreateValue = Number(event.target.value);
 };
 
+let box;
+let arrBox = [];
 const createBoxes = function(amount) {
   amount = counterCreateValue;
   for (let index = 0; index < amount; index += 1) {
-    const box = document.createElement('div');
-    // let arr;
-    // arr.push(box);
+    box = document.createElement('div');
     console.log(box);
     const divWidth = 30;
     const divHeight = 30;
@@ -26,14 +26,17 @@ const createBoxes = function(amount) {
     box.style.backgroundColor = `rgb(${getRandomNum()}, ${getRandomNum()}, ${getRandomNum()})`;
     box.style.width = `${divWidth}px`;
     box.style.height = `${divHeight}px`;
-    boxesRef.appendChild(box);
+    arrBox.push(box);
   }
-  //   boxesRef.children.length = amount;
-
-  console.log(boxesRef);
+  arrBox.map(item => boxesRef.append(item));
 };
 
-const destroyBoxes = function() {};
+const destroyBoxes = function() {
+  arrBox.map(item => boxesRef.removeChild(item));
+  arrBox = [];
+  inputRef.value = '';
+  console.log(arrBox);
+};
 
 inputRef.addEventListener('input', valueInput);
 btnRenderRef.addEventListener('click', createBoxes);
