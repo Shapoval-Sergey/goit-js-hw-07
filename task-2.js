@@ -7,15 +7,12 @@ const ingredients = [
   'Приправы',
 ];
 
-const arr = [];
-ingredients.forEach(element => {
+const arr = ingredients.map(element => {
   const items = document.createElement('li');
   items.textContent = element;
-  arr.push(items);
+  return items;
 });
 
 const listRef = document.querySelector('#ingredients');
-arr.map(item => {
-  listRef.append(item);
-  return listRef;
-});
+
+listRef.append(...arr);
