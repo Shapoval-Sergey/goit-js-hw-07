@@ -13,6 +13,7 @@ const arr = ingredients.map(element => {
   return items;
 });
 
+
 const listRef = document.querySelector('#ingredients');
 
 listRef.append(...arr);
