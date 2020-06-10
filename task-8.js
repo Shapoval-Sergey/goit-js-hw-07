@@ -21,7 +21,7 @@ const createBoxes = function() {
     box.style.height = `${divSize}px`;
     arrBox.push(box);
   }
-  arrBox.map(() => boxesRef.append(...arrBox));
+  boxesRef.append(...arrBox));
 
   inputRef.value = 0;
 };
