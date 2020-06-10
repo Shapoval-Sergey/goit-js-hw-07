@@ -8,8 +8,6 @@ const btnDestroyRef = document.querySelector(
 
 const boxesRef = document.querySelector('#boxes');
 
-
-
 const createBoxes = function() {
   let box;
   const arrBox = [];
@@ -23,7 +21,7 @@ const createBoxes = function() {
     box.style.height = `${divSize}px`;
     arrBox.push(box);
   }
-  arrBox.map(item => boxesRef.append(...arrBox));
+  arrBox.map(() => boxesRef.append(...arrBox));
 
   inputRef.value = 0;
 };
